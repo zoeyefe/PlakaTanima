@@ -25,7 +25,7 @@ for c in contours:
 
 if screenCnt is None:
     detected = 0
-    print ("No contour detected")
+    print ("Siyah çizgi bulunamadı.")
 else:
      detected = 1
 
@@ -38,21 +38,21 @@ new_image = cv2.bitwise_and(img,img,mask=mask)
 cv2.imshow('Kirpildi',new_image)
 
 cv2.waitKey(0)
-""""
+
 (x, y) = np.where(mask == 255)
 (topx, topy) = (np.min(x), np.min(y))
 (bottomx, bottomy) = (np.max(x), np.max(y))
 Cropped = gray[topx:bottomx+1, topy:bottomy+1]
 
 text = pytesseract.image_to_string(Cropped, config='--psm 11')
-print("Plaka Tanıma Programlaması\n")
-print("Plaka Numarası:",text)
+print("Plaka Tanıma Programı\n")
+print("Plaka Numarası(bazen algılamayabilir):",text)
 img = cv2.resize(img,(500,300))
 Cropped = cv2.resize(Cropped,(400,200))
 
 cv2.imshow('Araba',img)
-cv2.imshow('Kirpildi',Cropped)
+cv2.imshow('Kırpıldı',Cropped)
 
 cv2.waitKey(0)
 cv2.destroyAllWindows()
-"""
+
